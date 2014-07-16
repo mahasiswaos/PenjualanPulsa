@@ -1,0 +1,35 @@
+
+<?php $__env->startSection('content'); ?>
+<table class="table">
+            <tr class="panel-default">
+                <th>Id Pelanggan</th>
+                <th>Nama Pelanggan</th>
+                <th>Jenis Kelamin</th>
+                <th>Alamat</th>
+                <th>No HP</th>
+            </tr>
+            <?php $i = 1;
+            foreach ($iz as $value) {
+                ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td><?php echo $value['id_pel']; ?></td>
+                    <td><?php echo $value['nm_pel']; ?></td>
+                    <td><?php echo $value['jns_klamn']; ?></td>
+                    <td><?php echo $value['alamat']; ?></td>
+                    <td><?php echo $value['no_hp']; ?></td>
+                    <td>
+                        <div class="btn btn-group">
+                            <a class="btn btn-small btn-danger" title="Delete" href="<?php echo URL::to('/Pelanggan/delete/' . $value->id); ?>"><span class="glyphicon glyphicon-trash"></span> </a>
+                            <a class="btn btn-small btn-primary" title="Update" href="<?php echo URL::to('/Pelanggan/edit/' . $value->id); ?>"><span class=" glyphicon glyphicon-edit"></span> </a>
+                        </div>
+
+                    </td>
+                </tr>
+                <?php
+                $i++;
+            }
+            ?>
+        </table>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.bootstrapadmin.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

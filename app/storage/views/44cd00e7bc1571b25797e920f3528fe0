@@ -1,0 +1,37 @@
+
+<?php $__env->startSection('content'); ?>
+<?php if (Session::has('message')): ?>
+<div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <?php echo Session::get('message'); ?>
+</div>
+<?php endif; ?>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h1><i class="glyphicon glyphicon-list"></i> Aplikasi Penjualan Pulsa </h1></div>
+    <table class="table" style="text-align: center; font-size: medium">
+        <tr class="alert-info">
+            <td><b><h4>Nama Kelompok</h4></b></td>
+            <td><b><h4>Nim</h4></b></td>
+            <td><b><h4>Alamat</h4></b></td>
+        </tr>
+        <tr>
+            <td>Muh. Farij Wajdi</td>
+            <td>1010510107</td>
+            <td>Lombok Timur, Sepit</td>
+        </tr>
+        <tr>
+            <td>Zaenul Panani</td>
+            <td>1010510106</td>
+            <td>Lombok Timur, Sepit</td>
+        </tr>
+        <tr>
+            <td>Andi kurnia sani</td>
+            <td>1010510211</td>
+            <td>Lombok Timur, Keruak</td>
+        </tr>
+    </table>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.bootstrapadmin.index', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
